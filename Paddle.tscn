@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/candleLarge.gltf.glb" type="PackedScene" id=1]
+[ext_resource path="res://paddle.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.275, 0.5, 1.125 )
+
+[node name="Paddle" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="candleLargegltf" parent="." instance=ExtResource( 1 )]
+transform = Transform( 9.80797e-14, 2.4601e-07, -1.5, 1.5, -6.06022e-07, 0, -6.02009e-07, -1.51, -2.44381e-07, 0, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="candleLargegltf"]
+transform = Transform( 0.666667, -1.98952e-13, 0, 2.55795e-13, 0.662252, -2.13163e-14, -3.38813e-21, 2.13163e-14, 0.666667, 5.21586e-07, 0.930763, 2.11734e-07 )
+light_color = Color( 1, 0.843137, 0.301961, 1 )
+light_specular = 0.0
+omni_range = 42.0
+omni_attenuation = 3.03144
+
+[node name="candleLargegltf2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3.98147e-14, 2.4601e-07, 1.5, 1.5, -2.4601e-07, 0, 2.44381e-07, 1.51, -2.44381e-07, 0, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="candleLargegltf2"]
+transform = Transform( 0.666667, -3.55271e-14, 3.38813e-21, 3.55271e-14, 0.662252, -1.42109e-14, -3.38813e-21, 1.42109e-14, 0.666667, 4.81042e-07, 0.969897, 1.41133e-07 )
+light_color = Color( 1, 0.843137, 0.301961, 1 )
+light_specular = 0.0
+omni_range = 42.0
+omni_attenuation = 3.03144
